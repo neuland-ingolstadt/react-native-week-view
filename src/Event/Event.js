@@ -325,9 +325,6 @@ const Event = ({
         accessibilityHint={`Show event ${event.id}`}
         style={[
           styles.container,
-          {
-            backgroundColor: event.color || DEFAULT_COLOR,
-          },
           containerStyle,
           event.style,
           animatedStyles,
