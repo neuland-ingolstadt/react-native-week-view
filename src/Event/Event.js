@@ -229,17 +229,11 @@ const Event = ({
     .enabled(!!onPress && !event.disablePress)
     .runOnJS(runGesturesOnJS)
     .withTestId(`pressGesture-${event.id}`)
-    .onTouchesDown(() => {
-      isPressing.value = true;
-    })
     .onEnd((evt, success) => {
       if (success) {
         runOnJS(onPressWrapper)();
       }
     })
-    .onFinalize(() => {
-      isPressing.value = false;
-    });
 
   const composedGesture = Gesture.Race(
     wrappedDragGesture,
